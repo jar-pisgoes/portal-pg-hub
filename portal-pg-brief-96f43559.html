@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pg官网 – 用户引导与场景识别</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: #f9fafb;
+            color: #1e1e2a;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        /* 导航 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #e4e7ed;
+            margin-bottom: 2.8rem;
+        }
+
+        .logo {
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            font-size: 1.1rem;
+            color: #1f2937;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 0.9rem;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: #111827;
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 3.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            color: #111827;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #4b5563;
+            max-width: 600px;
+        }
+
+        /* 章节 */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-head {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid #e9edf2;
+            color: #1f2937;
+        }
+
+        .section-sub {
+            color: #4b5563;
+            margin-bottom: 1.4rem;
+            font-size: 0.95rem;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e6eaef;
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            transition: box-shadow 0.1s;
+        }
+
+        .card-title {
+            font-weight: 500;
+            margin-bottom: 0.35rem;
+            font-size: 1rem;
+            color: #1f2937;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #4b5563;
+            margin-bottom: 0.2rem;
+        }
+
+        .card ul {
+            padding-left: 1.2rem;
+            margin: 0.4rem 0 0.2rem;
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        .card li {
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #eaedf2;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #1f2937;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        .link-embed {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px dotted #a3c0f5;
+        }
+
+        .link-embed:hover {
+            color: #1d4ed8;
+            border-bottom-style: solid;
+        }
+
+        .footnote {
+            margin-top: 2.5rem;
+            padding: 1.5rem 0 2rem;
+            border-top: 1px solid #e4e7ed;
+            color: #6b7280;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .wrapper {
+                padding: 0 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+                padding-bottom: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .card {
+                padding: 1rem 1.1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .card-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 顶部导航 -->
+        <nav>
+            <span class="logo">pg 导航</span>
+            <ul class="nav-links">
+                <li><a href="#intro">识别</a></li>
+                <li><a href="#scenes">场景</a></li>
+                <li><a href="#faq">说明</a></li>
+            </ul>
+        </nav>
+
+        <!-- 核心介绍 -->
+        <div class="hero" id="intro">
+            <h1>快速识别：pg官网 能为你做什么？</h1>
+            <p>
+                初次访问一个域名时，最直接的需求是弄清楚它的定位与价值。<strong>pg官网</strong> 是一个集中了多种工具与信息入口的平台，面向需要快速检索、查询或进行特定操作的日常用户。以下从三个典型场景来理解它的用途。
+            </p>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <section id="scenes">
+            <div class="section-head">三个常见使用场景</div>
+            <p class="section-sub">不同身份的用户，在 pg官网 找到对应的入口。</p>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title">🔍 信息检索与验证</div>
+                    <p>需要查找特定数据、核对参考信息或进行简单查询时，平台提供结构化的入口，减少跳转成本。适合日常信息工作者。</p>
+                    <ul>
+                        <li>快速定位资源</li>
+                        <li>分类浏览</li>
+                        <li>辅助工具链接</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title">⚙️ 轻量操作与管理</div>
+                    <p>针对需要登录或配置的部分功能，pg官网 提供了统一的操作面板。无需记忆多个地址，从一处发起。</p>
+                    <ul>
+                        <li>账户相关设置</li>
+                        <li>常用功能开关</li>
+                        <li>状态概览</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title">📎 跨页面导航</div>
+                    <p>当工作流涉及多个子站点或外部资源时，pg官网 作为枢纽，把相关链接组织在一起。提升连续操作的流畅度。</p>
+                    <ul>
+                        <li>子频道索引</li>
+                        <li>推荐外部参考</li>
+                        <li>更新说明聚合</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title">🧭 初次探路</div>
+                    <p>对于新用户，通过首页的引导和常见问题，可以快速了解平台边界，判断是否匹配自身需求。</p>
+                    <ul>
+                        <li>功能介绍摘要</li>
+                        <li>使用前提说明</li>
+                        <li>入口预览</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见说明 / FAQ 摘要 -->
+        <section id="faq">
+            <div class="section-head">常见说明摘要</div>
+            <p class="section-sub">关于 pg官网 的一些基础信息，帮助快速建立认知。</p>
+
+            <div class="faq-item">
+                <div class="faq-q">这个网站主要面向哪类用户？</div>
+                <div class="faq-a">面向有明确查询、操作或导航需求的普通网络用户，不限定特定行业。界面以功能优先级组织。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">是否需要注册才能使用？</div>
+                <div class="faq-a">部分基础功能可直接使用；涉及个人配置或保存偏好时可能需要简单的账户关联，具体以页面提示为准。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">与其他综合入口有什么不同？</div>
+                <div class="faq-a">pg官网 更强调轻量直达，不堆砌无关信息。每个模块都对应一个可识别的使用场景，减少浏览噪声。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">如何获取更完整的帮助？</div>
+                <div class="faq-a">大部分疑问可以通过站内引导页或关联文档得到解释。你也可以直接访问 <a href="https://portal--pg.com" class="link-embed">pg官网</a> 查看最新布局与模块说明。</div>
+            </div>
+        </section>
+
+        <!-- 额外上下文承接 -->
+        <p style="margin-bottom: 2rem; color: #4b5563; font-size: 0.9rem; border-left: 3px solid #d1d9e6; padding-left: 0.8rem;">
+            从上述场景和说明可以看出，<a href="https://portal--pg.com" class="link-embed">pg官网</a> 的设计初衷是让用户借助清晰的分组快速定位自己需要的部分，而非提供冗长的叙述。如果你正在评估它是否适合你的工作习惯，不妨从上面列举的某一场景切入试用。
+        </p>
+
+        <div class="footnote">
+            <span>基于页面结构辅助理解 · 自主判断用途</span>
+        </div>
+    </div>
+</body>
+</html>
