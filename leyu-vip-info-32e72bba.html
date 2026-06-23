@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼 · 简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4ef;
+            font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+            color: #2e2b27;
+            line-height: 1.7;
+            padding: 2.5rem 1.2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #ece6dc 0%, #faf6f0 100%);
+            padding: 3.8rem 2.2rem;
+            border-radius: 28px 8px 28px 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            margin-bottom: 3.2rem;
+            text-align: center;
+            border: 1px solid #e1d9ce;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            color: #433e37;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #7b7268;
+            border-top: 1px solid #d6cdc1;
+            border-bottom: 1px solid #d6cdc1;
+            display: inline-block;
+            padding: 0.3rem 1.8rem;
+            letter-spacing: 0.12em;
+            margin: 0.8rem 0 0.2rem;
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 620px;
+            margin: 1.4rem auto 0;
+            font-size: 0.95rem;
+            color: #5e554c;
+        }
+
+        .section-card {
+            background: #fffffffc;
+            padding: 2.2rem 2rem;
+            margin-bottom: 2.4rem;
+            border-radius: 20px 4px 20px 4px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.025);
+            border-left: 4px solid #cbb9a6;
+            transition: border-color 0.2s;
+        }
+
+        .section-card:hover {
+            border-left-color: #a6907c;
+        }
+
+        .section-card h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #3f3a33;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px dashed #dcd3c8;
+        }
+
+        .section-card p {
+            margin-bottom: 1rem;
+            font-size: 0.98rem;
+            color: #3d3832;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .blockquote-note {
+            background: #f0ebe3;
+            padding: 1.2rem 1.8rem;
+            border-radius: 40px 6px 40px 6px;
+            margin: 1.6rem 0 0.6rem;
+            border: 1px solid #e2d7cb;
+            font-style: normal;
+            color: #4a443d;
+            box-shadow: inset 0 0 0 1px #faf6f1;
+        }
+
+        .blockquote-note strong {
+            font-weight: 600;
+            color: #3b332c;
+        }
+
+        .inline-link {
+            color: #7c6a58;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #cbbaa8;
+            font-weight: 400;
+            transition: color 0.15s, text-decoration-color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #4d3f32;
+            text-decoration-color: #7c6a58;
+        }
+
+        .faq-mini {
+            background: #faf7f2;
+            padding: 1.6rem 2rem;
+            border-radius: 12px;
+            margin-top: 2.2rem;
+            border: 1px solid #e3dacf;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #3f3932;
+            letter-spacing: 0.02em;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e7dfd4;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #4e453c;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-a {
+            color: #655c53;
+            font-size: 0.92rem;
+            padding-left: 0.4rem;
+        }
+
+        .footer-note {
+            margin-top: 3.6rem;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #71685e;
+            border-top: 1px solid #ddd5ca;
+            background: #fcfaf7;
+            border-radius: 30px 8px 30px 8px;
+        }
+
+        .footer-note .small-icon {
+            display: inline-block;
+            margin: 0 0.3rem;
+            opacity: 0.7;
+        }
+
+        .footer-note a {
+            color: #7c6a58;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .footer-note a:hover {
+            color: #4d3f32;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1.5rem 0.9rem;
+            }
+
+            .hero {
+                padding: 2.4rem 1.2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-card {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .blockquote-note {
+                padding: 1rem 1.2rem;
+            }
+
+            .faq-mini {
+                padding: 1.2rem 1rem;
+            }
+
+            .footer-note {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <h1>乐鱼 · 简明指南</h1>
+        <div class="sub">一份安静的访问笔记</div>
+        <p>从界面到体验，从入口到细节——这里只有实用的观察与提醒，不堆砌术语，也不故作姿态。</p>
+    </div>
+
+    <div class="section-card">
+        <h2>一、为何需要一份指南</h2>
+        <p>每天有太多信息掠过眼前，真正需要的往往是一个清晰的方向。对于初次接触 <a href="https://leyu--vip.com" class="inline-link">乐鱼</a> 的人来说，与其在页面之间来回试探，不如先了解它的基本布局与功能分区。这份指南不追求面面俱到，只愿让你在几分钟内把握住关键脉络。</p>
+        <p>所有的好工具都不该在理解上消耗你，而是让你尽快进入自己真正关心的事情。所以我们把核心的操作逻辑、内容分区以及常见的小疑惑，都整理在下面几段话里。</p>
+    </div>
+
+    <div class="section-card">
+        <h2>二、界面与功能速览</h2>
+        <p>从首页进入，你会看到清晰的导航层级。左侧区域通常集中了主要分类，右侧则呈现动态内容或推荐条目。每一个模块的命名都比较直白，没有刻意的缩写或生僻词。你可以在任意页面切换板块，返回时也能快速定位。</p>
+        <p>值得注意的是，部分功能区域在移动端做了重新排列，但核心操作路径与桌面端保持一致。如果你习惯在手机上浏览，建议尝试横屏或使用平板设备，体验会更舒展一些。</p>
+        <div class="blockquote-note">
+            <strong>一点提醒：</strong> 初次进入时，可以花半分钟熟悉一下顶部的筛选栏和底部的状态栏，这两处往往藏着最常用的快捷入口。
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>三、访问时的小建议</h2>
+        <p>网络环境会影响页面的加载速度，尤其在资源较多的区域。如果遇到响应稍慢的情况，不妨稍等几秒，或检查一下网络连接。部分动态内容会根据时段更新，同一页面在不同时间可能呈现不同的推荐列表，这属于正常现象。</p>
+        <p>另外，浏览器缓存也可能导致样式显示不一致。如果你发现页面布局有些错位，可以尝试清除缓存或使用无痕窗口访问。保持浏览器版本更新也能减少意外情况。</p>
+        <p>当然，最重要的还是保持轻松的心态。一个工具好不好用，最终取决于它是否贴合你的习惯。尝试几次，你自然会找到最顺手的方式。</p>
+    </div>
+
+    <div class="faq-mini">
+        <h3>▎ 几个常见疑问</h3>
+        <div class="faq-item">
+            <div class="faq-q">—— 页面显示不全怎么办？</div>
+            <div class="faq-a">调整浏览器缩放比例至 100%，或检查屏幕分辨率设置。部分老旧浏览器可能存在兼容问题。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">—— 找不到之前看过的内容？</div>
+            <div class="faq-a">可以尝试使用搜索功能，或者查看历史记录。如果页面有收藏功能，建议随手标记。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">—— 移动端与桌面端体验差异大吗？</div>
+            <div class="faq-a">核心功能一致，布局上做了自适应调整。部分菜单在手机上会折叠，点击展开即可。</div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <span class="small-icon">—</span> 以上内容基于常规使用体验整理，不构成任何承诺或保证。如需进一步了解，可直接访问 <a href="https://leyu--vip.com">乐鱼</a>，以实际页面信息为准。<span class="small-icon">—</span>
+        <br>
+        <span style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; color: #9b9085;">本页仅作为访问参考，不收集任何数据。</span>
+    </div>
+
+</body>
+</html>
